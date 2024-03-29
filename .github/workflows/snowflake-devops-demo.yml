@@ -25,6 +25,12 @@ jobs:
         with:
           python-version: 3.8.x
 
+      - name: Installing schemachange
+        run: |
+          python --version
+          echo "Step 1: Installing schemachange"
+          pip install schemachange
+
       - name: Run schemachange
         env:
           SF_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
@@ -35,12 +41,9 @@ jobs:
           SF_SCHEMA: ${{ secrets.SF_SCHEMA }}
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         run: |
-          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-          python --version
-          echo "Step 1: Installing schemachange"
-          pip install schemachange
-          
           echo "Step 2: Running schemachange"
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          
           schemachange deploy \
             --verbose \
             -f $GITHUB_WORKSPACE/migrations \
