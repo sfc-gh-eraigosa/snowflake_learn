@@ -45,7 +45,6 @@ jobs:
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           
           schemachange deploy \
-            --verbose \
             -f $GITHUB_WORKSPACE/migrations \
             -a $SF_ACCOUNT \
             -u $SF_USERNAME \
