@@ -228,3 +228,10 @@ schemachange \
 - Simple queries
 
 ### Saving worksheets
+
+## Other Examples
+
+- https://developers.snowflake.com/#listings?wvideo=haqeh4q2se
+
+## Another DDL tool
+- https://github.com/littleK0i/SnowDDL?tab=readme-ov-file
