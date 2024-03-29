@@ -42,6 +42,7 @@ jobs:
           
           echo "Step 2: Running schemachange"
           schemachange \
+            --verbose \
             -f $GITHUB_WORKSPACE/migrations \
             -a $SF_ACCOUNT \
             -u $SF_USERNAME \
